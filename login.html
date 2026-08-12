@@ -3,72 +3,256 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>Login | DateraQuest 2.0</title>
-<!-- Favicons -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | DateraQuest 2.0</title>
+
+  <!-- Favicons -->
   <link href="assets/img/logo-icon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<link rel="stylesheet" href="css/login.css">
+  <!-- Bootstrap Icons -->
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Login CSS -->
+  <link rel="stylesheet" href="css/login.css">
 
 </head>
 
+
 <body>
-    <header class="login-header">
 
-  
 
-</header>
+  <!-- =========================================
+       BACKGROUND DECORATION
+  ========================================== -->
 
-<div class="login-wrapper">
+  <div class="login-background">
+
+    <div class="data-grid"></div>
+
+    <div class="glow glow-1"></div>
+
+    <div class="glow glow-2"></div>
+
+    <div class="data-circle circle-1"></div>
+
+    <div class="data-circle circle-2"></div>
+
+    <div class="data-dots">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+
+  <header class="login-header">
+
+    <a href="select-competition.html" class="back-home">
+
+      <i class="bi bi-arrow-left"></i>
+
+      <span>Tes Verified Account</span>
+
+    </a>
+
+  </header>
+
+
+  <!-- =========================================
+       LOGIN WRAPPER
+  ========================================== -->
+
+  <main class="login-wrapper">
+
+
+    <!-- =========================================
+         LOGIN CARD
+    ========================================== -->
 
     <div class="login-card">
 
-       <div class="login-logo">
-    <img src="img/logo-icon.png"
-         class="logo-icon">
 
-    <img src="img/logo-text.png"
-         class="logo-text">
-</div>
+ 
+
+      <!-- Logo -->
+
+      <div class="login-logo">
+
+        <img
+          src="img/logo-icon.png"
+          class="logo-icon"
+          alt="DateraQuest Icon"
+        >
+
+        <img
+          src="img/logo-text.png"
+          class="logo-text"
+          alt="DateraQuest 2.0"
+        >
+
+      </div>
+
+
+      <!-- Title -->
+
+      <div class="login-heading">
+
 
         <p>
-            Sign in with your Google account
-            to continue to DateraQuest 2.0.
+          Sign in to access your DateraQuest 2.0
+          participant account.
         </p>
 
-    <button class="google-btn">
+      </div>
 
-<svg width="20" height="20" viewBox="0 0 48 48">
-<path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303C33.659 32.657 29.252 36 24 36c-6.627 0-12-5.373-12-12S17.373 12 24 12c3.059 0 5.842 1.154 7.955 3.045l5.657-5.657C34.046 6.053 29.27 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
-<path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 16.108 18.961 13 24 13c3.059 0 5.842 1.154 7.955 3.045l5.657-5.657C34.046 6.053 29.27 4 24 4c-7.732 0-14.41 4.388-17.694 10.691z"/>
-<path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.191-5.238C29.153 35.091 26.715 36 24 36c-5.231 0-9.624-3.326-11.283-7.946l-6.522 5.025C9.438 39.556 16.227 44 24 44z"/>
-<path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-1.032 2.935-3.164 5.298-6.085 6.57l6.191 5.238C36.971 38.351 44 33 44 24c0-1.341-.138-2.65-.389-3.917z"/>
-</svg>
 
-<span>Continue with Google</span>
+      <!-- Google Login -->
 
-</button>
+      <div class="login-action">
+
+        <button class="google-btn">
+
+          <span class="google-icon">
+
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+
+              <path
+                fill="#FFC107"
+                d="M43.611 20.083H42V20H24v8h11.303C33.659 32.657 29.252 36 24 36c-6.627 0-12-5.373-12-12S17.373 12 24 12c3.059 0 5.842 1.154 7.955 3.045l5.657-5.657C34.046 6.053 29.27 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"
+              />
+
+              <path
+                fill="#FF3D00"
+                d="M6.306 14.691l6.571 4.819C14.655 16.108 18.961 13 24 13c3.059 0 5.842 1.154 7.955 3.045l5.657-5.657C34.046 6.053 29.27 4 24 4c-7.732 0-14.41 4.388-17.694 10.691z"
+              />
+
+              <path
+                fill="#4CAF50"
+                d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.191-5.238C29.153 35.091 26.715 36 24 36c-5.231 0-9.624-3.326-11.283-7.946l-6.522 5.025C9.438 39.556 16.227 44 24 44z"
+              />
+
+              <path
+                fill="#1976D2"
+                d="M43.611 20.083H42V20H24v8h11.303c-1.032 2.935-3.164 5.298-6.085 6.57l6.191 5.238C36.971 38.351 44 33 44 24c0-1.341-.138-2.65-.389-3.917z"
+              />
+
+            </svg>
+
+          </span>
+
+
+          <span>
+            Continue with Google
+          </span>
+
+
+          <i class="bi bi-arrow-right google-arrow"></i>
+
+        </button>
+
+      </div>
+
+
+      <!-- Security -->
+
+      <div class="secure-login">
+
+        <i class="bi bi-shield-check"></i>
+
+        <span>
+          Secure participant authentication
+        </span>
+
+      </div>
+
+
+      <!-- Divider -->
+
+      <div class="login-divider">
+
+        <span></span>
 
         <small>
-
-            By continuing you agree to our
-            Terms of Service and Privacy Policy.
-            <br> Klik untuk
-            <a href="index.html">kembali</a>
-                   <a href="dashboard.html">Test dashboard</a>
-          
-
+          DATERAQUEST 2.0
         </small>
+
+        <span></span>
+
+      </div>
+
+
+      <!-- Terms -->
+
+      <div class="login-terms">
+
+        By continuing, you agree to our
+
+        <a href="#">
+          Terms of Service
+        </a>
+
+        and
+
+        <a href="#">
+          Privacy Policy
+        </a>.
+
+      </div>
+
+
+      <!-- Back -->
+
+      <a href="index.html" class="login-back">
+
+        <i class="bi bi-arrow-left"></i>
+
+        Back to homepage
+
+      </a>
+
 
     </div>
 
-</div>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="login-footer">
+
+    <span>
+      © 2026 DateraQuest 2.0
+    </span>
+
+    <span class="footer-dot"></span>
+
+    <span>
+      National Data Science Competition
+    </span>
+
+  </footer>
+
 
 </body>
 
