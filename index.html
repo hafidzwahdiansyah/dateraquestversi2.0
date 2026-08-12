@@ -360,202 +360,509 @@ setInterval(function(){
     </section><!-- /About Section -->
 
     <!-- Features Section -->
-    <section id="features" class="features section">
+<section id="features" class="features section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Competitions</h2>
-        <p>Choose Your Competition Category</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Competitions</h2>
+    <p>Choose Your Competition Category</p>
+  </div>
+  <!-- End Section Title -->
 
-      <div class="container">
+  <div class="container">
 
-        <div class="d-flex justify-content-center">
+    <!-- Competition Tabs -->
+    <div class="d-flex justify-content-center">
 
-          <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
+      <ul class="nav nav-tabs competition-tabs"
+          data-aos="fade-up"
+          data-aos-delay="100">
 
-            <li class="nav-item">
-              <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
-                <h4>Iterative Dashboard</h4>
+        <li class="nav-item">
+          <a class="nav-link active show"
+             data-bs-toggle="tab"
+             data-bs-target="#features-tab-1">
+
+            <span class="tab-number">01</span>
+            <span class="tab-title">Iterative Dashboard</span>
+
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             data-bs-toggle="tab"
+             data-bs-target="#features-tab-2">
+
+            <span class="tab-number">02</span>
+            <span class="tab-title">Machine Learning</span>
+
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             data-bs-toggle="tab"
+             data-bs-target="#features-tab-3">
+
+            <span class="tab-number">03</span>
+            <span class="tab-title">Essay Quest</span>
+
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+    <!-- End Competition Tabs -->
+
+
+    <!-- Tab Content -->
+    <div class="tab-content competition-tab-content"
+         data-aos="fade-up"
+         data-aos-delay="200">
+
+
+      <!-- =====================================================
+           ITERATIVE DASHBOARD
+      ====================================================== -->
+      <div class="tab-pane fade active show"
+           id="features-tab-1">
+
+        <div class="row competition-showcase align-items-center">
+
+          <!-- LEFT CONTENT -->
+          <div class="col-lg-6 order-2 order-lg-1 competition-info">
+
+            <span class="competition-label">
+              DATERAQUEST 2.0 · COMPETITION
+            </span>
+
+            <h3>Iterative Dashboard</h3>
+
+            <p>
+              Transform raw data into meaningful insights through
+              interactive and visually engaging dashboards.
+              Participants are challenged to analyze datasets and
+              present information that supports effective
+              decision-making.
+            </p>
+
+
+            <!-- Competition Meta -->
+            <div class="competition-meta">
+
+              <div class="meta-item">
+                <i class="bi bi-people"></i>
+
+                <div>
+                  <small>Team Size</small>
+                  <strong>2–3 Members</strong>
+                </div>
+              </div>
+
+
+              <div class="meta-item">
+                <i class="bi bi-mortarboard"></i>
+
+                <div>
+                  <small>Eligibility</small>
+                  <strong>Undergraduate</strong>
+                </div>
+              </div>
+
+            </div>
+            <!-- End Competition Meta -->
+
+
+            <!-- Features -->
+            <ul class="competition-points">
+
+              <li>
+                <i class="bi bi-check2-circle"></i>
+                <span>
+                  Open for undergraduate students across Indonesia.
+                </span>
+              </li>
+
+              <li>
+                <i class="bi bi-check2-circle"></i>
+                <span>
+                  Team competition consisting of 2–3 members.
+                </span>
+              </li>
+
+            </ul>
+            <!-- End Features -->
+
+
+            <!-- Button -->
+            <div class="competition-action">
+
+              <a href="dashboard-detail.html"
+                 class="competition-btn">
+
+                View Details
+
+                <i class="bi bi-arrow-right"></i>
+
               </a>
-            </li><!-- End tab nav item -->
 
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
-                <h4>Machine Learning</h4>
-              </a><!-- End tab nav item -->
+            </div>
 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
-                <h4>Essay Quest</h4>
-              </a>
-            </li><!-- End tab nav item -->
+          </div>
+          <!-- End Left Content -->
 
-          </ul>
+
+          <!-- RIGHT VISUAL -->
+          <div class="col-lg-6 order-1 order-lg-2">
+
+            <div class="competition-visual">
+
+              <!-- Background Decoration -->
+              <div class="visual-grid"></div>
+
+              <div class="visual-glow"></div>
+
+
+              <!-- Competition Number -->
+              <div class="visual-badge">
+
+                <span>01</span>
+
+                <small>
+                  COMPETITION
+                </small>
+
+              </div>
+
+
+              <!-- Mascot -->
+              <img src="img/maskotgajah.png"
+                   class="competition-mascot img-fluid"
+                   alt="Iterative Dashboard">
+
+
+              <!-- Visual Caption -->
+              <div class="visual-caption">
+
+                <span>DATA</span>
+
+                <strong>
+                  Dashboard & Visualization
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!-- End Right Visual -->
 
         </div>
 
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
-         <div class="tab-pane fade active show" id="features-tab-1">
-  <div class="row">
-
-    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-
-      <h3>📊 Iterative Dashboard</h3>
-
-      <p class="fst-italic">
-        Transform raw data into meaningful insights through interactive and visually engaging dashboards. Participants are challenged to analyze datasets and present information that supports effective decision-making.
-      </p>
-
-      <ul>
-        <li>
-          <i class="bi bi-check2-all"></i>
-          <span>Open for undergraduate students across Indonesia.</span>
-        </li>
-
-        <li>
-          <i class="bi bi-check2-all"></i>
-          <span>Team competition consisting of 2–3 members.</span>
-        </li>
-
-    
-      </ul>
-
-      <div class="mt-4">
-
-        <a href="dashboard-detail.html" class="btn btn-success rounded-pill px-4">
-
-          View Details
-          <i class="bi bi-arrow-right ms-2"></i>
-
-        </a>
-
       </div>
+      <!-- End Iterative Dashboard -->
 
-    </div>
 
- <div class="col-lg-6 order-1 order-lg-2 text-center">
+      <!-- =====================================================
+           MACHINE LEARNING
+      ====================================================== -->
+      <div class="tab-pane fade"
+           id="features-tab-2">
 
-    <div class="competition-mascot-card">
+        <div class="row competition-showcase align-items-center">
 
-        <img src="img/maskotgajah.png"
-             class="competition-mascot img-fluid"
-             alt="Iterative Dashboard">
+          <!-- LEFT CONTENT -->
+          <div class="col-lg-6 order-2 order-lg-1 competition-info">
 
-    </div>
+            <span class="competition-label">
+              DATERAQUEST 2.0 · COMPETITION
+            </span>
 
-</div>
+            <h3>Machine Learning</h3>
 
-  </div>
-</div><!-- End tab content item -->
+            <p>
+              Build intelligent predictive models to solve
+              real-world challenges using data-driven approaches.
+              This competition encourages participants to apply
+              machine learning techniques, evaluate model
+              performance, and deliver innovative solutions
+              with meaningful impact.
+            </p>
 
-         <div class="tab-pane fade" id="features-tab-2">
-  <div class="row">
 
-    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+            <!-- Competition Meta -->
+            <div class="competition-meta">
 
-      <h3>🤖 Machine Learning</h3>
+              <div class="meta-item">
+                <i class="bi bi-people"></i>
 
-      <p class="fst-italic">
-        Build intelligent predictive models to solve real-world challenges using data-driven approaches. This competition encourages participants to apply machine learning techniques, evaluate model performance, and deliver innovative solutions with meaningful impact.
-      </p>
+                <div>
+                  <small>Team Size</small>
+                  <strong>2–3 Members</strong>
+                </div>
+              </div>
 
-      <ul>
-        <li>
-          <i class="bi bi-check2-all"></i>
-          <span>Open for undergraduate students from universities across Indonesia.</span>
-        </li>
 
-        <li>
-          <i class="bi bi-check2-all"></i>
-          <span>Team competition consisting of 2–3 members.</span>
-        </li>
+              <div class="meta-item">
+                <i class="bi bi-mortarboard"></i>
 
-   
+                <div>
+                  <small>Eligibility</small>
+                  <strong>Undergraduate</strong>
+                </div>
+              </div>
 
-      </ul>
+            </div>
+            <!-- End Competition Meta -->
 
-      <div class="mt-4">
-        <a href="machine-learning-detail.html" class="btn btn-success rounded-pill px-4">
-          View Details
-          <i class="bi bi-arrow-right ms-2"></i>
-        </a>
-      </div>
 
-    </div>
+            <!-- Features -->
+            <ul class="competition-points">
 
-   <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <li>
+                <i class="bi bi-check2-circle"></i>
 
-    <div class="competition-mascot-card">
+                <span>
+                  Open for undergraduate students from universities
+                  across Indonesia.
+                </span>
 
-        <img src="img/maskotharimau.png"
-             alt="Machine Learning Competition"
-             class="competition-mascot img-fluid">
+              </li>
 
-    </div>
+              <li>
+                <i class="bi bi-check2-circle"></i>
 
-</div>
+                <span>
+                  Team competition consisting of 2–3 members.
+                </span>
 
-  </div>
-</div><!-- End tab content item -->
+              </li>
 
-          <div class="tab-pane fade" id="features-tab-3">
-  <div class="row">
+            </ul>
+            <!-- End Features -->
 
-    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
 
-      <h3>📝 Essay Quest</h3>
+            <!-- Button -->
+            <div class="competition-action">
 
-      <p class="fst-italic">
-        Express your ideas and contribute innovative solutions to real-world challenges through scientific writing. Essay Quest encourages participants to combine critical thinking, research, and data-driven insights to address issues in technology, society, and sustainable development.
-      </p>
+              <a href="machine-learning-detail.html"
+                 class="competition-btn">
 
-      <ul>
-        <li>
-          <i class="bi bi-check2-all"></i>
-          <span>Open for undergraduate students from universities across Indonesia.</span>
-        </li>
+                View Details
 
-        <li>
-          <i class="bi bi-check2-all"></i>
-          <span>Individual competition focused on scientific and analytical writing.</span>
-        </li>
+                <i class="bi bi-arrow-right"></i>
 
-      
+              </a>
 
-      </ul>
+            </div>
 
-      <div class="mt-4">
-        <a href="essay-quest-detail.html" class="btn btn-success rounded-pill px-4">
-          View Details
-          <i class="bi bi-arrow-right ms-2"></i>
-        </a>
-      </div>
+          </div>
+          <!-- End Left Content -->
 
-    </div>
 
-    <div class="col-lg-6 order-1 order-lg-2 text-center">
+          <!-- RIGHT VISUAL -->
+          <div class="col-lg-6 order-1 order-lg-2">
 
-    <div class="competition-mascot-card">
+            <div class="competition-visual">
 
-        <img src="img/maskotmonyet.png"
-             alt="Essay Quest Competition"
-             class="competition-mascot img-fluid">
+              <div class="visual-grid"></div>
 
-    </div>
+              <div class="visual-glow"></div>
 
-</div>
 
-  </div>
-</div><!-- End tab content item -->
+              <div class="visual-badge">
+
+                <span>02</span>
+
+                <small>
+                  COMPETITION
+                </small>
+
+              </div>
+
+
+              <!-- Mascot -->
+              <img src="img/maskotharimau.png"
+                   class="competition-mascot img-fluid"
+                   alt="Machine Learning Competition">
+
+
+              <div class="visual-caption">
+
+                <span>AI & DATA</span>
+
+                <strong>
+                  Predictive Modeling
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!-- End Right Visual -->
 
         </div>
 
       </div>
+      <!-- End Machine Learning -->
 
-    </section><!-- /Features Section -->
+
+      <!-- =====================================================
+           ESSAY QUEST
+      ====================================================== -->
+      <div class="tab-pane fade"
+           id="features-tab-3">
+
+        <div class="row competition-showcase align-items-center">
+
+          <!-- LEFT CONTENT -->
+          <div class="col-lg-6 order-2 order-lg-1 competition-info">
+
+            <span class="competition-label">
+              DATERAQUEST 2.0 · COMPETITION
+            </span>
+
+            <h3>Essay Quest</h3>
+
+            <p>
+              Express your ideas and contribute innovative
+              solutions to real-world challenges through
+              scientific writing. Essay Quest encourages
+              participants to combine critical thinking,
+              research, and data-driven insights to address
+              issues in technology, society, and sustainable
+              development.
+            </p>
+
+
+            <!-- Competition Meta -->
+            <div class="competition-meta">
+
+              <div class="meta-item">
+                <i class="bi bi-person"></i>
+
+                <div>
+                  <small>Competition Type</small>
+                  <strong>Individual</strong>
+                </div>
+              </div>
+
+
+              <div class="meta-item">
+                <i class="bi bi-mortarboard"></i>
+
+                <div>
+                  <small>Eligibility</small>
+                  <strong>Undergraduate</strong>
+                </div>
+              </div>
+
+            </div>
+            <!-- End Competition Meta -->
+
+
+            <!-- Features -->
+            <ul class="competition-points">
+
+              <li>
+                <i class="bi bi-check2-circle"></i>
+
+                <span>
+                  Open for undergraduate students from universities
+                  across Indonesia.
+                </span>
+
+              </li>
+
+              <li>
+                <i class="bi bi-check2-circle"></i>
+
+                <span>
+                  Individual competition focused on scientific
+                  and analytical writing.
+                </span>
+
+              </li>
+
+            </ul>
+            <!-- End Features -->
+
+
+            <!-- Button -->
+            <div class="competition-action">
+
+              <a href="essay-quest-detail.html"
+                 class="competition-btn">
+
+                View Details
+
+                <i class="bi bi-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+          <!-- End Left Content -->
+
+
+          <!-- RIGHT VISUAL -->
+          <div class="col-lg-6 order-1 order-lg-2">
+
+            <div class="competition-visual">
+
+              <div class="visual-grid"></div>
+
+              <div class="visual-glow"></div>
+
+
+              <div class="visual-badge">
+
+                <span>03</span>
+
+                <small>
+                  COMPETITION
+                </small>
+
+              </div>
+
+
+              <!-- Mascot -->
+              <img src="img/maskotmonyet.png"
+                   class="competition-mascot img-fluid"
+                   alt="Essay Quest Competition">
+
+
+              <div class="visual-caption">
+
+                <span>IDEAS</span>
+
+                <strong>
+                  Scientific & Analytical Writing
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!-- End Right Visual -->
+
+        </div>
+
+      </div>
+      <!-- End Essay Quest -->
+
+
+    </div>
+    <!-- End Tab Content -->
+
+  </div>
+
+</section><!-- /Features Section -->
 
     <!-- Features Cards Section -->
      
@@ -884,152 +1191,449 @@ Compete for prestigious awards, exciting prizes, and national recognition.
     </section><!-- /Call To Action Section -->
 
     <!-- Clients Section -->
-    <section id="clients" class="clients section">
+   <!-- =========================
+     SPONSORS & PARTNERS
+========================= -->
+<section id="clients" class="clients section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container">
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
+    <!-- Section Heading -->
+    <div class="sponsor-heading text-center"
+         data-aos="fade-up">
+
+      <span class="sponsor-eyebrow">
+        OUR SUPPORTERS
+      </span>
+
+      <h2>
+        Sponsors &amp; Partners
+      </h2>
+
+      <p>
+        Proudly supported by organizations and institutions
+        that contribute to the growth of data science and innovation.
+      </p>
+
+    </div>
+    <!-- End Section Heading -->
+
+
+    <!-- Logo Carousel -->
+    <div class="sponsor-carousel"
+         data-aos="fade-up"
+         data-aos-delay="150">
+
+      <div class="swiper init-swiper">
+
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 800,
+            "autoplay": {
+              "delay": 2800,
+              "disableOnInteraction": false
+            },
+            "slidesPerView": "auto",
+            "centeredSlides": false,
+            "grabCursor": true,
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 1.5,
+                "spaceBetween": 15
               },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
+              "480": {
+                "slidesPerView": 2,
+                "spaceBetween": 18
               },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
+              "640": {
+                "slidesPerView": 3,
+                "spaceBetween": 20
+              },
+              "768": {
+                "slidesPerView": 4,
+                "spaceBetween": 22
+              },
+              "992": {
+                "slidesPerView": 5,
+                "spaceBetween": 25
+              },
+              "1200": {
+                "slidesPerView": 6,
+                "spaceBetween": 28
               }
             }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="img/Logo_ITERA.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="img/logosainsdata.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="img/logo_HMSD.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="img/bpslampung.jpg" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="img/clients/client-8.png" class="img-fluid" alt=""></div>
+          }
+        </script>
+
+
+        <div class="swiper-wrapper align-items-center">
+
+
+          <!-- ITERA -->
+          <div class="swiper-slide">
+
+            <div class="sponsor-logo-card">
+
+              <img src="img/Logo_ITERA.png"
+                   class="img-fluid"
+                   alt="Institut Teknologi Sumatera">
+
+            </div>
+
           </div>
-          <div class="swiper-pagination"></div>
+
+
+          <!-- SAINS DATA ITERA -->
+          <div class="swiper-slide">
+
+            <div class="sponsor-logo-card">
+
+              <img src="img/logosainsdata.jpg"
+                   class="img-fluid"
+                   alt="Sains Data ITERA">
+
+            </div>
+
+          </div>
+
+
+          <!-- HMSD -->
+          <div class="swiper-slide">
+
+            <div class="sponsor-logo-card">
+
+              <img src="img/logo_HMSD.png"
+                   class="img-fluid"
+                   alt="HMSD">
+
+            </div>
+
+          </div>
+
+
+          <!-- BPS LAMPUNG -->
+          <div class="swiper-slide">
+
+            <div class="sponsor-logo-card">
+
+              <img src="img/bpslampung.jpg"
+                   class="img-fluid"
+                   alt="BPS Lampung">
+
+            </div>
+
+          </div>
+
+
+          <!-- CLIENT 5 -->
+          <div class="swiper-slide">
+
+            <div class="sponsor-logo-card">
+
+              <img src="img/clients/client-5.png"
+                   class="img-fluid"
+                   alt="Sponsor DateraQuest">
+
+            </div>
+
+          </div>
+
+
+          <!-- CLIENT 6 -->
+          <div class="swiper-slide">
+
+            <div class="sponsor-logo-card">
+
+              <img src="img/clients/client-6.png"
+                   class="img-fluid"
+                   alt="Sponsor DateraQuest">
+
+            </div>
+
+          </div>
+
+
+          <!-- CLIENT 7 -->
+          <div class="swiper-slide">
+
+            <div class="sponsor-logo-card">
+
+              <img src="img/clients/client-7.png"
+                   class="img-fluid"
+                   alt="Sponsor DateraQuest">
+
+            </div>
+
+          </div>
+
+
+          <!-- CLIENT 8 -->
+          <div class="swiper-slide">
+
+            <div class="sponsor-logo-card">
+
+              <img src="img/clients/client-8.png"
+                   class="img-fluid"
+                   alt="Sponsor DateraQuest">
+
+            </div>
+
+          </div>
+
+
         </div>
+
+
+        <div class="swiper-pagination"></div>
 
       </div>
 
-    </section><!-- /Clients Section -->
+    </div>
+    <!-- End Logo Carousel -->
 
 
+    <!-- Bottom Accent -->
+    <div class="sponsor-bottom"
+         data-aos="fade-up"
+         data-aos-delay="250">
 
-    <!-- Faq Section -->
-    <section class="faq-9 faq section light-background" id="faq">
+      <span></span>
+      <span></span>
+      <span></span>
 
-      <div class="container">
-        <div class="row">
+    </div>
 
-          <div class="col-lg-5" data-aos="fade-up">
-           <h2 class="faq-title">Frequently Asked Questions (FAQ)</h2>
+  </div>
 
-<p class="faq-description">
-Find answers to the most common questions about DateraQuest 2.0, including eligibility, registration, payment, and competition rules.
-</p>
-            <div class="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
-              <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="currentColor"></path>
-              </svg>
-            </div>
+</section><!-- /Clients Section -->
+
+
+<section class="faq-9 faq section light-background" id="faq">
+
+  <div class="container">
+
+    <div class="row">
+
+      <!-- =========================
+           LEFT SIDE
+      ========================== -->
+      <div class="col-lg-5" data-aos="fade-up">
+
+        <h2 class="faq-title">
+          Frequently Asked Questions (FAQ)
+        </h2>
+
+        <p class="faq-description">
+          Find answers to the most common questions about DateraQuest 2.0,
+          including eligibility, registration, payment, and competition rules.
+        </p>
+
+
+        <!-- ARROW + DESKTOP BUTTON -->
+        <div class="faq-arrow-area"
+             data-aos="fade-up"
+             data-aos-delay="200">
+
+          <div class="faq-arrow d-none d-lg-block">
+
+            <svg width="200"
+                 height="211"
+                 viewBox="0 0 200 211"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+
+              <path
+                d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z"
+                fill="currentColor">
+              </path>
+
+            </svg>
+
           </div>
 
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
-            <div class="faq-container">
 
-             <div class="faq-item faq">
-  <h3>Who can participate in DateraQuest 2.0?</h3>
-  <div class="faq-content">
-    <p>
-      DateraQuest 2.0 is open to active undergraduate students from universities across Indonesia. Participants must provide a valid student ID during registration.
-    </p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
+          <!-- BUTTON KHUSUS DESKTOP -->
+          <a href="#"
+             class="faq-more-btn faq-more-desktop">
 
-            <div class="faq-item">
-  <h3>What competition categories are available?</h3>
-  <div class="faq-content">
-    <p>
-      DateraQuest 2.0 consists of three competition categories: Iterative Dashboard, Machine Learning, and Essay Quest. Participants may choose the category that best matches their interests and expertise.
-    </p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
+            <span>Lihat Pertanyaan Lebih Banyak</span>
 
-            <div class="faq-item">
-  <h3>Can I participate individually or in a team?</h3>
-  <div class="faq-content">
-    <p>
-      Participation format depends on the competition category. Dashboard and Machine Learning are team competitions (2–3 members), while Essay Quest is an individual competition.
-    </p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
+            <i class="bi bi-arrow-right"></i>
 
-            <div class="faq-item">
-  <h3>How do I complete my registration?</h3>
-  <div class="faq-content">
-    <p>
-      Create an account, complete the registration form, choose your competition category, make the registration payment, upload the payment proof, and wait for verification from the committee.
-    </p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-              <div class="faq-item">
-  <h3>Where can I download the guidebook?</h3>
-  <div class="faq-content">
-    <p>
-      The official guidebook can be downloaded from the "Download Guidebook" button available on the homepage or through your participant dashboard after registration.
-    </p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-<div class="faq-item">
-  <h3>How can I contact the committee?</h3>
-  <div class="faq-content">
-    <p>
-      If you have any questions, you can contact the DateraQuest committee via WhatsApp, email, or our official Instagram account listed in the Contact section.
-    </p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-            </div>
-          </div>
+          </a>
 
         </div>
-      </div>
-    </section><!-- /Faq Section -->
 
+      </div>
+      <!-- END LEFT SIDE -->
+
+
+      <!-- =========================
+           RIGHT SIDE - FAQ
+      ========================== -->
+      <div class="col-lg-7"
+           data-aos="fade-up"
+           data-aos-delay="300">
+
+        <div class="faq-container">
+
+
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+
+            <h3>
+              Who can participate in DateraQuest 2.0?
+            </h3>
+
+            <div class="faq-content">
+              <p>
+                DateraQuest 2.0 is open to active undergraduate students
+                from universities across Indonesia. Participants must
+                provide a valid student ID during registration.
+              </p>
+            </div>
+
+            <i class="faq-toggle bi bi-chevron-right"></i>
+
+          </div>
+
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+
+            <h3>
+              What competition categories are available?
+            </h3>
+
+            <div class="faq-content">
+              <p>
+                DateraQuest 2.0 consists of three competition categories:
+                Iterative Dashboard, Machine Learning, and Essay Quest.
+                Participants may choose the category that best matches
+                their interests and expertise.
+              </p>
+            </div>
+
+            <i class="faq-toggle bi bi-chevron-right"></i>
+
+          </div>
+
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+
+            <h3>
+              Can I participate individually or in a team?
+            </h3>
+
+            <div class="faq-content">
+              <p>
+                Participation format depends on the competition category.
+                Dashboard and Machine Learning are team competitions
+                (2–3 members), while Essay Quest is an individual
+                competition.
+              </p>
+            </div>
+
+            <i class="faq-toggle bi bi-chevron-right"></i>
+
+          </div>
+
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+
+            <h3>
+              How do I complete my registration?
+            </h3>
+
+            <div class="faq-content">
+              <p>
+                Create an account, complete the registration form,
+                choose your competition category, make the registration
+                payment, upload the payment proof, and wait for
+                verification from the committee.
+              </p>
+            </div>
+
+            <i class="faq-toggle bi bi-chevron-right"></i>
+
+          </div>
+
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+
+            <h3>
+              Where can I download the guidebook?
+            </h3>
+
+            <div class="faq-content">
+              <p>
+                The official guidebook can be downloaded from the
+                "Download Guidebook" button available on the homepage
+                or through your participant dashboard after registration.
+              </p>
+            </div>
+
+            <i class="faq-toggle bi bi-chevron-right"></i>
+
+          </div>
+
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+
+            <h3>
+              How can I contact the committee?
+            </h3>
+
+            <div class="faq-content">
+              <p>
+                If you have any questions, you can contact the
+                DateraQuest committee via WhatsApp, email, or our
+                official Instagram account listed in the Contact section.
+              </p>
+            </div>
+
+            <i class="faq-toggle bi bi-chevron-right"></i>
+
+          </div>
+
+
+        </div>
+        <!-- END FAQ CONTAINER -->
+
+
+        <!-- BUTTON KHUSUS TABLET & HP -->
+        <div class="faq-more-mobile">
+
+          <a href="#"
+             class="faq-more-btn">
+
+            <span>Lihat Pertanyaan Lebih Banyak</span>
+
+            <i class="bi bi-arrow-right"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+      <!-- END RIGHT SIDE -->
+
+    </div>
+
+  </div>
+
+</section>
+  
     <!-- Call To Action 2 Section -->
     <section id="call-to-action-2" class="call-to-action-2 section dark-background">
 
