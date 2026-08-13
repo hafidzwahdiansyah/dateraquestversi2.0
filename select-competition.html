@@ -3,23 +3,1504 @@
 
 <head>
 
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <title>Choose Competition | DateraQuest 2.0</title>
+    <title>Choose Competition | DateraQuest 2.0</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="img/logo-icon.png">
+    <link rel="icon" href="img/logo-icon.png">
 
-  <!-- Bootstrap -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
-  <!-- Bootstrap Icons -->
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Select Competition CSS -->
-  <link rel="stylesheet" href="css/choose-competition.css">
+    <style>
+
+        /* =====================================================
+           DATERAQUEST
+           SELECT COMPETITION
+        ===================================================== */
+
+        :root {
+
+            --dq-green: #174303;
+            --dq-green-main: #64831b;
+            --dq-green-soft: #eaf3df;
+
+            --dq-lime: #e9f349;
+
+            --dq-bg: #f7faf5;
+
+            --dq-text: #172414;
+            --dq-muted: #71806a;
+
+            --dq-border: rgba(23, 67, 3, .10);
+
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            color: var(--dq-text);
+
+            background:
+
+                radial-gradient(
+                    circle at 5% 5%,
+                    rgba(100, 131, 27, .12),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 95% 80%,
+                    rgba(233, 243, 73, .09),
+                    transparent 28%
+                ),
+
+                var(--dq-bg);
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ===================================================== */
+
+        .selection-background {
+
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 0;
+
+        }
+
+
+        .data-grid {
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: .38;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(23,67,3,.035) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(23,67,3,.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+
+        }
+
+
+        .glow {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            filter: blur(10px);
+
+        }
+
+
+        .glow-1 {
+
+            width: 350px;
+
+            height: 350px;
+
+            top: -160px;
+
+            left: -130px;
+
+            background:
+                rgba(100,131,27,.08);
+
+        }
+
+
+        .glow-2 {
+
+            width: 350px;
+
+            height: 350px;
+
+            right: -150px;
+
+            bottom: -150px;
+
+            background:
+                rgba(233,243,73,.08);
+
+        }
+
+
+        .data-circle {
+
+            position: absolute;
+
+            border: 1px solid
+                rgba(100,131,27,.08);
+
+            border-radius: 50%;
+
+        }
+
+
+        .circle-1 {
+
+            width: 500px;
+
+            height: 500px;
+
+            right: -300px;
+
+            top: 80px;
+
+        }
+
+
+        .circle-2 {
+
+            width: 300px;
+
+            height: 300px;
+
+            left: -190px;
+
+            bottom: 80px;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .selection-header {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 100%;
+
+            max-width: 1180px;
+
+            margin: auto;
+
+            padding:
+                28px 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            text-decoration: none;
+
+        }
+
+
+        .brand img:first-child {
+
+            width: 42px;
+
+            height: 42px;
+
+            object-fit: contain;
+
+            border-radius: 12px;
+
+        }
+
+
+        .brand img:last-child {
+
+            width: 145px;
+
+            height: auto;
+
+            object-fit: contain;
+
+        }
+
+
+        .secure-status {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                9px 13px;
+
+            border:
+                1px solid
+                rgba(100,131,27,.14);
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,.72);
+
+            color:
+                var(--dq-green-main);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+        }
+
+
+        .status-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                #7ea51d;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(126,165,29,.10);
+
+        }
+
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+
+        .selection-wrapper {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            max-width: 1120px;
+
+            margin: auto;
+
+            padding:
+                20px 22px 70px;
+
+        }
+
+
+        /* =====================================================
+           PROGRESS
+        ===================================================== */
+
+        .progress-wrapper {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            max-width: 520px;
+
+            margin:
+                0 auto 45px;
+
+        }
+
+
+        .progress-step {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #9aa393;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            white-space: nowrap;
+
+        }
+
+
+        .progress-step.active {
+
+            color:
+                var(--dq-green);
+
+        }
+
+
+        .step-number {
+
+            width: 30px;
+
+            height: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #eef2ea;
+
+            color: #98a18f;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+        }
+
+
+        .progress-step.active
+        .step-number {
+
+            background:
+                var(--dq-green);
+
+            color: white;
+
+        }
+
+
+        .progress-line {
+
+            flex: 1;
+
+            height: 1px;
+
+            margin:
+                0 12px;
+
+            background:
+                #dce3d8;
+
+        }
+
+
+        .progress-line.active {
+
+            background:
+                var(--dq-green-main);
+
+        }
+
+
+        /* =====================================================
+           HEADING
+        ===================================================== */
+
+        .selection-heading {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin:
+                0 auto 30px;
+
+        }
+
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color:
+                var(--dq-green-main);
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.6px;
+
+        }
+
+
+        .selection-heading h1 {
+
+            margin:
+                11px 0 10px;
+
+            color:
+                var(--dq-green);
+
+            font-size:
+                clamp(30px, 5vw, 44px);
+
+            line-height: 1.08;
+
+            letter-spacing:
+                -1.6px;
+
+        }
+
+
+        .selection-heading h1 span {
+
+            color:
+                var(--dq-green-main);
+
+        }
+
+
+        .selection-heading p {
+
+            margin: 0;
+
+            color:
+                var(--dq-muted);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           ACCOUNT
+        ===================================================== */
+
+        .verified-account {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            max-width: 500px;
+
+            margin:
+                0 auto 35px;
+
+            padding:
+                13px 16px;
+
+            border:
+                1px solid
+                var(--dq-border);
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,.78);
+
+        }
+
+
+        .account-avatar {
+
+            width: 39px;
+
+            height: 39px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                var(--dq-green-soft);
+
+            color:
+                var(--dq-green-main);
+
+        }
+
+
+        .account-info {
+
+            flex: 1;
+
+        }
+
+
+        .account-info span {
+
+            display: block;
+
+            margin-bottom: 2px;
+
+            color:
+                var(--dq-muted);
+
+            font-size: 8px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.2px;
+
+        }
+
+
+        .account-info strong {
+
+            color:
+                var(--dq-text);
+
+            font-size: 12px;
+
+        }
+
+
+        .verified-icon {
+
+            color:
+                var(--dq-green-main);
+
+            font-size: 19px;
+
+        }
+
+
+        /* =====================================================
+           COMPETITION HEADING
+        ===================================================== */
+
+        .competition-heading {
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            margin-bottom: 16px;
+
+        }
+
+
+        .section-label {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            color:
+                var(--dq-green-main);
+
+            font-size: 9px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+        .competition-heading h2 {
+
+            margin: 0;
+
+            color:
+                var(--dq-text);
+
+            font-size: 22px;
+
+            letter-spacing: -.5px;
+
+        }
+
+
+        .required-label {
+
+            padding:
+                6px 10px;
+
+            border-radius: 20px;
+
+            background:
+                var(--dq-green-soft);
+
+            color:
+                var(--dq-green-main);
+
+            font-size: 9px;
+
+            font-weight: 900;
+
+        }
+
+
+        /* =====================================================
+           CARDS
+        ===================================================== */
+
+        .competition-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 18px;
+
+        }
+
+
+        .competition-card {
+
+            position: relative;
+
+            min-height: 450px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            border:
+                1px solid
+                var(--dq-border);
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,.93);
+
+            box-shadow:
+                0 15px 40px
+                rgba(23,67,3,.055);
+
+            overflow: hidden;
+
+            cursor: pointer;
+
+            transition:
+                .3s ease;
+
+        }
+
+
+        .competition-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(100,131,27,.25);
+
+            box-shadow:
+                0 22px 48px
+                rgba(23,67,3,.10);
+
+        }
+
+
+        .competition-card.selected {
+
+            border:
+                2px solid
+                var(--dq-green-main);
+
+            box-shadow:
+                0 22px 55px
+                rgba(23,67,3,.14);
+
+            transform:
+                translateY(-5px);
+
+        }
+
+
+        /* =====================================================
+           CHECK
+        ===================================================== */
+
+        .selected-check {
+
+            position: absolute;
+
+            top: 14px;
+
+            right: 14px;
+
+            z-index: 5;
+
+            width: 31px;
+
+            height: 31px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                var(--dq-green-main);
+
+            color: white;
+
+            font-size: 14px;
+
+            opacity: 0;
+
+            transform: scale(.7);
+
+            transition: .25s ease;
+
+        }
+
+
+        .competition-card.selected
+        .selected-check {
+
+            opacity: 1;
+
+            transform: scale(1);
+
+        }
+
+
+        /* =====================================================
+           VISUAL
+        ===================================================== */
+
+        .competition-visual {
+
+            position: relative;
+
+            height: 210px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+        }
+
+
+        .dashboard-visual {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf5e6,
+                    #f8faed
+                );
+
+        }
+
+
+        .ml-visual {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf3e7,
+                    #f8f9ed
+                );
+
+        }
+
+
+        .essay-visual {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0f4e8,
+                    #fafbed
+                );
+
+        }
+
+
+        .visual-glow {
+
+            position: absolute;
+
+            width: 180px;
+
+            height: 180px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(100,131,27,.18),
+                    transparent 68%
+                );
+
+        }
+
+
+        .competition-visual img {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 150px;
+
+            height: 150px;
+
+            object-fit: contain;
+
+            transition:
+                .35s ease;
+
+        }
+
+
+        .competition-card:hover
+        .competition-visual img {
+
+            transform:
+                scale(1.06)
+                translateY(-4px);
+
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .competition-content {
+
+            flex: 1;
+
+            padding:
+                20px 20px 10px;
+
+        }
+
+
+        .competition-number {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            color:
+                var(--dq-green-main);
+
+            font-size: 9px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .competition-content h3 {
+
+            margin:
+                0 0 8px;
+
+            color:
+                var(--dq-text);
+
+            font-size: 17px;
+
+            letter-spacing:
+                -.3px;
+
+        }
+
+
+        .competition-content p {
+
+            margin: 0;
+
+            color:
+                var(--dq-muted);
+
+            font-size: 11px;
+
+            line-height: 1.65;
+
+        }
+
+
+        .competition-meta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-top: 16px;
+
+        }
+
+
+        .competition-meta span {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            padding:
+                6px 8px;
+
+            border-radius: 8px;
+
+            background:
+                #f4f7f1;
+
+            color:
+                #778170;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================================
+           INDICATOR
+        ===================================================== */
+
+        .choose-indicator {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin:
+                0 20px 19px;
+
+            padding-top: 13px;
+
+            border-top:
+                1px solid
+                #edf1ea;
+
+            color:
+                #9aa392;
+
+            font-size: 9px;
+
+            font-weight: 850;
+
+            transition: .25s ease;
+
+        }
+
+
+        .competition-card.selected
+        .choose-indicator {
+
+            color:
+                var(--dq-green-main);
+
+        }
+
+
+        /* =====================================================
+           SELECTED PANEL
+        ===================================================== */
+
+        .selected-panel {
+
+            display: none;
+
+            align-items: center;
+
+            gap: 14px;
+
+            margin-top: 20px;
+
+            padding:
+                16px 18px;
+
+            border:
+                1px solid
+                rgba(100,131,27,.18);
+
+            border-radius: 15px;
+
+            background:
+                #f6faef;
+
+        }
+
+
+        .selected-panel.active {
+
+            display: flex;
+
+        }
+
+
+        .selected-icon {
+
+            width: 39px;
+
+            height: 39px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background:
+                var(--dq-green);
+
+            color: white;
+
+        }
+
+
+        .selected-info {
+
+            flex: 1;
+
+        }
+
+
+        .selected-info span {
+
+            display: block;
+
+            margin-bottom: 2px;
+
+            color:
+                var(--dq-green-main);
+
+            font-size: 8px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .selected-info strong {
+
+            display: block;
+
+            color:
+                var(--dq-text);
+
+            font-size: 13px;
+
+        }
+
+
+        .selected-info small {
+
+            color:
+                var(--dq-muted);
+
+            font-size: 9px;
+
+        }
+
+
+        .change-selection {
+
+            border: 0;
+
+            background: transparent;
+
+            color:
+                var(--dq-green-main);
+
+            font-size: 10px;
+
+            font-weight: 850;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =====================================================
+           ACTION
+        ===================================================== */
+
+        .selection-action {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-top: 20px;
+
+        }
+
+
+        .action-note {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color:
+                var(--dq-muted);
+
+            font-size: 10px;
+
+        }
+
+
+        .action-note i {
+
+            color:
+                var(--dq-green-main);
+
+        }
+
+
+        .continue-btn {
+
+            min-width: 215px;
+
+            height: 46px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            border: 0;
+
+            border-radius: 12px;
+
+            background:
+                #dfe5dc;
+
+            color:
+                #929b8d;
+
+            font-family: inherit;
+
+            font-size: 11px;
+
+            font-weight: 850;
+
+            cursor: not-allowed;
+
+            transition: .25s ease;
+
+        }
+
+
+        .continue-btn.ready {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--dq-green),
+                    var(--dq-green-main)
+                );
+
+            color: white;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 24px
+                rgba(23,67,3,.16);
+
+        }
+
+
+        .continue-btn.ready:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 14px 30px
+                rgba(23,67,3,.20);
+
+        }
+
+
+        /* =====================================================
+           FOOTNOTE
+        ===================================================== */
+
+        .selection-footnote {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 7px;
+
+            margin-top: 25px;
+
+            color:
+                #8c9588;
+
+            font-size: 9px;
+
+        }
+
+
+        .selection-footnote i {
+
+            color:
+                var(--dq-green-main);
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .competition-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                max-width: 550px;
+
+                margin: auto;
+
+            }
+
+
+            .competition-card {
+
+                min-height: auto;
+
+            }
+
+
+            .competition-visual {
+
+                height: 180px;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .selection-header {
+
+                padding:
+                    20px 15px;
+
+            }
+
+
+            .brand img:last-child {
+
+                width: 120px;
+
+            }
+
+
+            .secure-status {
+
+                font-size: 0;
+
+                width: 31px;
+
+                height: 31px;
+
+                padding: 0;
+
+                justify-content: center;
+
+            }
+
+
+            .selection-wrapper {
+
+                padding:
+                    15px 15px 50px;
+
+            }
+
+
+            .progress-wrapper {
+
+                margin-bottom: 32px;
+
+            }
+
+
+            .progress-step span {
+
+                display: none;
+
+            }
+
+
+            .progress-line {
+
+                margin:
+                    0 8px;
+
+            }
+
+
+            .selection-heading h1 {
+
+                font-size: 31px;
+
+            }
+
+
+            .selection-heading p {
+
+                font-size: 11px;
+
+            }
+
+
+            .competition-heading h2 {
+
+                font-size: 18px;
+
+            }
+
+
+            .selected-panel {
+
+                align-items: flex-start;
+
+            }
+
+
+            .selection-action {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+            }
+
+
+            .continue-btn {
+
+                width: 100%;
+
+            }
+
+
+            .action-note {
+
+                justify-content: center;
+
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -27,11 +1508,11 @@
 <body>
 
 
-  <!-- =====================================================
-       BACKGROUND
-  ====================================================== -->
+<!-- =====================================================
+     BACKGROUND
+====================================================== -->
 
-  <div class="selection-background">
+<div class="selection-background">
 
     <div class="data-grid"></div>
 
@@ -43,688 +1524,828 @@
 
     <div class="data-circle circle-2"></div>
 
-    <div class="data-dots">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-  </div>
+</div>
 
 
 
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
+<!-- =====================================================
+     HEADER
+====================================================== -->
 
-  <header class="selection-header">
+<header class="selection-header">
 
-    <a href="index.html" class="brand">
 
-      <img
-        src="img/logo-icon.png"
-        alt="DateraQuest"
-      >
+    <a
+        href="index.html"
+        class="brand"
+    >
 
-      <img
-        src="img/logo-text.png"
-        alt="DateraQuest 2.0"
-      >
+        <img
+            src="img/logo-icon.png"
+            alt="DateraQuest"
+        >
+
+        <img
+            src="img/logo-text.png"
+            alt="DateraQuest 2.0"
+        >
 
     </a>
 
 
     <div class="secure-status">
 
-      <span class="status-dot"></span>
+        <span class="status-dot"></span>
 
-      Account Verified
+        Account Verified
 
     </div>
 
-  </header>
+
+</header>
 
 
 
-  <!-- =====================================================
-       MAIN
-  ====================================================== -->
+<!-- =====================================================
+     MAIN
+====================================================== -->
 
-  <main class="selection-wrapper">
+<main class="selection-wrapper">
 
 
-    <!-- ===================================================
-         PROGRESS
-    ==================================================== -->
+    <!-- PROGRESS -->
 
     <div class="progress-wrapper">
 
-      <div class="progress-step active">
 
-        <div class="step-number">
-          <i class="bi bi-check-lg"></i>
+        <div class="progress-step active">
+
+            <div class="step-number">
+
+                <i class="bi bi-check-lg"></i>
+
+            </div>
+
+            <span>
+                Account
+            </span>
+
         </div>
 
-        <span>Account</span>
 
-      </div>
-
-
-      <div class="progress-line active"></div>
+        <div class="progress-line active"></div>
 
 
-      <div class="progress-step active">
+        <div class="progress-step active">
 
-        <div class="step-number">
-          2
+            <div class="step-number">
+                2
+            </div>
+
+            <span>
+                Competition
+            </span>
+
         </div>
 
-        <span>Competition</span>
 
-      </div>
-
-
-      <div class="progress-line"></div>
+        <div class="progress-line"></div>
 
 
-      <div class="progress-step">
+        <div class="progress-step">
 
-        <div class="step-number">
-          3
+            <div class="step-number">
+                3
+            </div>
+
+            <span>
+                Registration
+            </span>
+
         </div>
 
-        <span>Dashboard</span>
-
-      </div>
 
     </div>
 
 
 
-    <!-- ===================================================
-         HEADING
-    ==================================================== -->
+    <!-- HEADING -->
 
     <div class="selection-heading">
 
-      <span class="eyebrow">
 
-        <i class="bi bi-stars"></i>
+        <span class="eyebrow">
 
-        PARTICIPANT ONBOARDING
+            <i class="bi bi-stars"></i>
 
-      </span>
+            PARTICIPANT ONBOARDING
 
-
-      <h1>
-        Welcome to
-        <span>DateraQuest 2.0</span>
-      </h1>
+        </span>
 
 
-      <p>
-        Your account has been successfully verified.
-        Choose the competition category you want to participate in
-        before continuing to your participant dashboard.
-      </p>
+        <h1>
+
+            Welcome to
+
+            <span>
+                DateraQuest 2.0
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Your account has been successfully verified.
+            Choose the competition category you want to
+            participate in before continuing to registration.
+
+        </p>
+
 
     </div>
 
 
 
-    <!-- ===================================================
-         VERIFIED ACCOUNT
-    ==================================================== -->
+    <!-- ACCOUNT -->
 
     <div class="verified-account">
 
-      <div class="account-avatar">
 
-        <i class="bi bi-person-fill"></i>
+        <div class="account-avatar">
 
-      </div>
+            <i class="bi bi-person-fill"></i>
 
-
-      <div class="account-info">
-
-        <span>
-          VERIFIED GOOGLE ACCOUNT
-        </span>
-
-        <strong>
-          Participant Account
-        </strong>
-
-      </div>
+        </div>
 
 
-      <div class="verified-icon">
+        <div class="account-info">
 
-        <i class="bi bi-patch-check-fill"></i>
+            <span>
+                VERIFIED GOOGLE ACCOUNT
+            </span>
 
-      </div>
+            <strong>
+                Participant Account
+            </strong>
+
+        </div>
+
+
+        <div class="verified-icon">
+
+            <i class="bi bi-patch-check-fill"></i>
+
+        </div>
+
 
     </div>
 
 
 
-    <!-- ===================================================
-         SECTION LABEL
-    ==================================================== -->
+    <!-- COMPETITION HEADING -->
 
     <div class="competition-heading">
 
-      <div>
 
-        <span class="section-label">
-          STEP 02
+        <div>
+
+            <span class="section-label">
+                STEP 02
+            </span>
+
+            <h2>
+                Choose Your Competition
+            </h2>
+
+        </div>
+
+
+        <span class="required-label">
+            Required
         </span>
 
-        <h2>
-          Choose Your Competition
-        </h2>
-
-      </div>
-
-
-      <span class="required-label">
-        Required
-      </span>
 
     </div>
 
 
 
-    <!-- ===================================================
+    <!-- =====================================================
          COMPETITION CARDS
-    ==================================================== -->
+    ====================================================== -->
 
     <div class="competition-grid">
 
 
-      <!-- =================================================
-           ITERATIVE DASHBOARD
-      ================================================== -->
+        <!-- ITERATIVE DASHBOARD -->
 
-      <div
-        class="competition-card"
-        data-competition="Iterative Dashboard"
-      >
+        <div
+            class="competition-card"
+            data-code="iterative-dashboard"
+        >
 
-        <div class="selected-check">
+            <div class="selected-check">
 
-          <i class="bi bi-check-lg"></i>
+                <i class="bi bi-check-lg"></i>
+
+            </div>
+
+
+            <div class="competition-visual dashboard-visual">
+
+                <div class="visual-glow"></div>
+
+                <img
+                    src="img/maskotgajah.png"
+                    alt="Iterative Dashboard"
+                >
+
+            </div>
+
+
+            <div class="competition-content">
+
+                <span class="competition-number">
+                    01
+                </span>
+
+
+                <h3>
+                    Iterative Dashboard
+                </h3>
+
+
+                <p>
+
+                    Transform raw data into meaningful
+                    insights through interactive and
+                    engaging dashboards.
+
+                </p>
+
+
+                <div class="competition-meta">
+
+                    <span>
+
+                        <i class="bi bi-people-fill"></i>
+
+                        Team 2–3 Members
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="bi bi-bar-chart-fill"></i>
+
+                        Data Visualization
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="choose-indicator">
+
+                <span>
+                    Select Competition
+                </span>
+
+                <i class="bi bi-arrow-right"></i>
+
+            </div>
+
 
         </div>
 
 
-        <div class="competition-visual dashboard-visual">
 
-          <div class="visual-glow"></div>
+        <!-- MACHINE LEARNING -->
 
-          <img
-            src="img/maskotgajah.png"
-            alt="Iterative Dashboard"
-          >
+        <div
+            class="competition-card"
+            data-code="machine-learning"
+        >
+
+            <div class="selected-check">
+
+                <i class="bi bi-check-lg"></i>
+
+            </div>
+
+
+            <div class="competition-visual ml-visual">
+
+                <div class="visual-glow"></div>
+
+                <img
+                    src="img/maskotharimau.png"
+                    alt="Machine Learning"
+                >
+
+            </div>
+
+
+            <div class="competition-content">
+
+                <span class="competition-number">
+                    02
+                </span>
+
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+
+                <p>
+
+                    Build intelligent predictive models
+                    and data-driven solutions for
+                    real-world challenges.
+
+                </p>
+
+
+                <div class="competition-meta">
+
+                    <span>
+
+                        <i class="bi bi-people-fill"></i>
+
+                        Team 2–3 Members
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="bi bi-cpu-fill"></i>
+
+                        Predictive Modeling
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="choose-indicator">
+
+                <span>
+                    Select Competition
+                </span>
+
+                <i class="bi bi-arrow-right"></i>
+
+            </div>
+
 
         </div>
 
 
-        <div class="competition-content">
 
-          <span class="competition-number">
-            01
-          </span>
+        <!-- ESSAY QUEST -->
 
+        <div
+            class="competition-card"
+            data-code="essay-quest"
+        >
 
-          <h3>
-            Iterative Dashboard
-          </h3>
+            <div class="selected-check">
 
+                <i class="bi bi-check-lg"></i>
 
-          <p>
-            Transform raw data into meaningful insights
-            through interactive and engaging dashboards.
-          </p>
+            </div>
 
 
-          <div class="competition-meta">
+            <div class="competition-visual essay-visual">
 
-            <span>
-              <i class="bi bi-people-fill"></i>
-              Team 2–3 Members
-            </span>
+                <div class="visual-glow"></div>
 
-            <span>
-              <i class="bi bi-bar-chart-fill"></i>
-              Data Visualization
-            </span>
+                <img
+                    src="img/maskotmonyet.png"
+                    alt="Essay Quest"
+                >
 
-          </div>
+            </div>
+
+
+            <div class="competition-content">
+
+                <span class="competition-number">
+                    03
+                </span>
+
+
+                <h3>
+                    Essay Quest
+                </h3>
+
+
+                <p>
+
+                    Express innovative ideas through
+                    scientific writing, research,
+                    and data-driven thinking.
+
+                </p>
+
+
+                <div class="competition-meta">
+
+                    <span>
+
+                        <i class="bi bi-person-fill"></i>
+
+                        Individual
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="bi bi-journal-text"></i>
+
+                        Scientific Writing
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="choose-indicator">
+
+                <span>
+                    Select Competition
+                </span>
+
+                <i class="bi bi-arrow-right"></i>
+
+            </div>
+
 
         </div>
-
-
-        <div class="choose-indicator">
-
-          <span>
-            Select Competition
-          </span>
-
-          <i class="bi bi-arrow-right"></i>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- =================================================
-           MACHINE LEARNING
-      ================================================== -->
-
-      <div
-        class="competition-card"
-        data-competition="Machine Learning"
-      >
-
-        <div class="selected-check">
-
-          <i class="bi bi-check-lg"></i>
-
-        </div>
-
-
-        <div class="competition-visual ml-visual">
-
-          <div class="visual-glow"></div>
-
-          <img
-            src="img/maskotharimau.png"
-            alt="Machine Learning"
-          >
-
-        </div>
-
-
-        <div class="competition-content">
-
-          <span class="competition-number">
-            02
-          </span>
-
-
-          <h3>
-            Machine Learning
-          </h3>
-
-
-          <p>
-            Build intelligent predictive models and
-            data-driven solutions for real-world challenges.
-          </p>
-
-
-          <div class="competition-meta">
-
-            <span>
-              <i class="bi bi-people-fill"></i>
-              Team 2–3 Members
-            </span>
-
-            <span>
-              <i class="bi bi-cpu-fill"></i>
-              Predictive Modeling
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="choose-indicator">
-
-          <span>
-            Select Competition
-          </span>
-
-          <i class="bi bi-arrow-right"></i>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- =================================================
-           ESSAY QUEST
-      ================================================== -->
-
-      <div
-        class="competition-card"
-        data-competition="Essay Quest"
-      >
-
-        <div class="selected-check">
-
-          <i class="bi bi-check-lg"></i>
-
-        </div>
-
-
-        <div class="competition-visual essay-visual">
-
-          <div class="visual-glow"></div>
-
-          <img
-            src="img/maskotmonyet.png"
-            alt="Essay Quest"
-          >
-
-        </div>
-
-
-        <div class="competition-content">
-
-          <span class="competition-number">
-            03
-          </span>
-
-
-          <h3>
-            Essay Quest
-          </h3>
-
-
-          <p>
-            Express innovative ideas through scientific
-            writing, research, and data-driven thinking.
-          </p>
-
-
-          <div class="competition-meta">
-
-            <span>
-              <i class="bi bi-person-fill"></i>
-              Individual
-            </span>
-
-            <span>
-              <i class="bi bi-journal-text"></i>
-              Scientific Writing
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="choose-indicator">
-
-          <span>
-            Select Competition
-          </span>
-
-          <i class="bi bi-arrow-right"></i>
-
-        </div>
-
-      </div>
 
 
     </div>
 
 
 
-    <!-- ===================================================
-         SELECTED COMPETITION
-    ==================================================== -->
+    <!-- =====================================================
+         SELECTED PANEL
+    ====================================================== -->
 
-    <div class="selected-panel">
-
-      <div class="selected-icon">
-
-        <i class="bi bi-check-circle-fill"></i>
-
-      </div>
+    <div
+        class="selected-panel"
+        id="selectedPanel"
+    >
 
 
-      <div class="selected-info">
+        <div class="selected-icon">
 
-        <span>
-          SELECTED COMPETITION
-        </span>
+            <i class="bi bi-check-lg"></i>
 
-        <strong id="selectedCompetition">
-          Please select a competition
-        </strong>
-
-      </div>
+        </div>
 
 
-      <button
-        type="button"
-        class="change-selection"
-        id="changeSelection"
-      >
+        <div class="selected-info">
 
-        <i class="bi bi-arrow-repeat"></i>
+            <span>
+                SELECTED COMPETITION
+            </span>
 
-        Change
 
-      </button>
+            <strong id="selectedCompetition">
+                Please select a competition
+            </strong>
+
+
+            <small id="selectedCompetitionDescription">
+                Choose one competition above
+            </small>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="change-selection"
+            id="changeSelection"
+        >
+
+            <i class="bi bi-arrow-repeat"></i>
+
+            Change
+
+        </button>
+
 
     </div>
 
 
 
-    <!-- ===================================================
+    <!-- =====================================================
          ACTION
-    ==================================================== -->
+    ====================================================== -->
 
     <div class="selection-action">
 
-      <div class="action-note">
 
-        <i class="bi bi-info-circle"></i>
+        <div class="action-note">
 
-        <span>
-          You can review your competition choice before
-          completing your registration.
-        </span>
+            <i class="bi bi-info-circle"></i>
 
-      </div>
+            <span>
+                Select one competition before continuing.
+            </span>
+
+        </div>
 
 
-      <button
-        type="button"
-        class="continue-btn"
-        id="continueBtn"
-        disabled
-      >
+        <button
+            type="button"
+            class="continue-btn"
+            id="continueBtn"
+            disabled
+        >
 
-        <span>
-          Continue to Participant Dashboard
-        </span>
+            <span>
+                Continue to registration
+            </span>
 
-        <i class="bi bi-arrow-right"></i>
+            <i class="bi bi-arrow-right"></i>
 
-      </button>
+        </button>
+
 
     </div>
 
 
 
-    <!-- ===================================================
-         FOOTNOTE
-    ==================================================== -->
-
     <p class="selection-footnote">
 
-      <i class="bi bi-shield-check"></i>
+        <i class="bi bi-shield-check"></i>
 
-      Your account information is securely protected.
+        Your account information is securely protected.
 
     </p>
 
 
-  </main>
+</main>
 
 
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
+<script>
 
-  <footer class="selection-footer">
+/* =========================================================
+   COMPETITION DATA
+========================================================= */
 
-    <span>
-      © 2026 DateraQuest 2.0
-    </span>
+const competitions = {
 
-    <span class="footer-dot"></span>
+    "iterative-dashboard": {
 
-    <span>
-      National Data Science Competition
-    </span>
+        name: "Iterative Dashboard",
 
-  </footer>
+        description:
+            "Interactive dashboard and data visualization competition."
 
+    },
 
+    "machine-learning": {
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
+        name: "Machine Learning",
 
-  <script>
+        description:
+            "Predictive modeling and intelligent data-driven solutions."
 
-    const competitionCards =
-      document.querySelectorAll(".competition-card");
+    },
 
-    const selectedCompetition =
-      document.getElementById("selectedCompetition");
+    "essay-quest": {
 
-    const continueBtn =
-      document.getElementById("continueBtn");
+        name: "Essay Quest",
 
-    const changeSelection =
-      document.getElementById("changeSelection");
+        description:
+            "Scientific writing, research, and data-driven thinking."
 
+    }
 
-    let selectedValue = null;
+};
 
 
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
-    /* ================================================
-       SELECT COMPETITION
-    ================================================= */
+const cards =
+    document.querySelectorAll(
+        ".competition-card"
+    );
 
-    competitionCards.forEach(card => {
+const selectedPanel =
+    document.getElementById(
+        "selectedPanel"
+    );
 
-      card.addEventListener("click", () => {
+const selectedName =
+    document.getElementById(
+        "selectedCompetition"
+    );
 
-        competitionCards.forEach(item => {
+const selectedDescription =
+    document.getElementById(
+        "selectedCompetitionDescription"
+    );
 
-          item.classList.remove("selected");
+const continueBtn =
+    document.getElementById(
+        "continueBtn"
+    );
+
+const changeSelection =
+    document.getElementById(
+        "changeSelection"
+    );
+
+
+/* =========================================================
+   SELECTED COMPETITION
+========================================================= */
+
+let selectedCode = null;
+
+
+/* =========================================================
+   CARD CLICK
+========================================================= */
+
+cards.forEach(function(card) {
+
+    card.addEventListener(
+        "click",
+        function() {
+
+            /* Remove old selection */
+
+            cards.forEach(function(item) {
+
+                item.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+            /* Add selection */
+
+            card.classList.add(
+                "selected"
+            );
+
+
+            /* Get exact code */
+
+            selectedCode =
+                card.dataset.code;
+
+
+            /* Get competition */
+
+            const competition =
+                competitions[selectedCode];
+
+
+            /* Update panel */
+
+            selectedName.textContent =
+                competition.name;
+
+
+            selectedDescription.textContent =
+                competition.description;
+
+
+            selectedPanel.classList.add(
+                "active"
+            );
+
+
+            /* Enable button */
+
+            continueBtn.disabled = false;
+
+            continueBtn.classList.add(
+                "ready"
+            );
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   CHANGE SELECTION
+========================================================= */
+
+changeSelection.addEventListener(
+    "click",
+    function() {
+
+        selectedCode = null;
+
+
+        cards.forEach(function(card) {
+
+            card.classList.remove(
+                "selected"
+            );
 
         });
 
 
-        card.classList.add("selected");
+        selectedPanel.classList.remove(
+            "active"
+        );
 
 
-        selectedValue =
-          card.dataset.competition;
+        selectedName.textContent =
+            "Please select a competition";
 
 
-        selectedCompetition.textContent =
-          selectedValue;
+        selectedDescription.textContent =
+            "Choose one competition above";
 
 
-        continueBtn.disabled = false;
+        continueBtn.disabled = true;
+
+        continueBtn.classList.remove(
+            "ready"
+        );
+
+    }
+);
 
 
-        continueBtn.classList.add("ready");
+/* =========================================================
+   CONTINUE
+========================================================= */
+
+continueBtn.addEventListener(
+    "click",
+    function() {
+
+        /*
+         * Jangan lanjut kalau belum memilih.
+         */
+
+        if (!selectedCode) {
+
+            return;
+
+        }
 
 
-        document
-          .querySelector(".selected-panel")
-          .classList.add("active");
+        /*
+         * Simpan sebagai backup.
+         */
 
-      });
-
-    });
-
-
-
-    /* ================================================
-       CHANGE SELECTION
-    ================================================= */
-
-    changeSelection.addEventListener("click", () => {
-
-      competitionCards.forEach(card => {
-
-        card.classList.remove("selected");
-
-      });
+        localStorage.setItem(
+            "selectedCompetitionCode",
+            selectedCode
+        );
 
 
-      selectedValue = null;
+        localStorage.setItem(
+            "selectedCompetitionName",
+            competitions[selectedCode].name
+        );
 
 
-      selectedCompetition.textContent =
-        "Please select a competition";
+        /*
+         * INI YANG PALING PENTING.
+         *
+         * Kirim CODE kompetisi langsung
+         * melalui URL.
+         */
 
+        window.location.href =
+            "registration.html?competition=" +
+            encodeURIComponent(
+                selectedCode
+            );
 
-      continueBtn.disabled = true;
+    }
+);
 
-      continueBtn.classList.remove("ready");
-
-      document
-        .querySelector(".selected-panel")
-        .classList.remove("active");
-
-    });
-
-
-
-    /* ================================================
-       CONTINUE
-    ================================================= */
-
-    continueBtn.addEventListener("click", () => {
-
-      if (!selectedValue) return;
-
-
-      /*
-       * Simpan pilihan sementara.
-       * Nanti bisa diganti menjadi database/API.
-       */
-
-      localStorage.setItem(
-        "selectedCompetition",
-        selectedValue
-      );
-
-
-      /*
-       * Redirect ke dashboard peserta.
-       * Ganti dashboard.html sesuai
-       * halaman dashboard kamu.
-       */
-
-      window.location.href =
-        "dashboard.html";
-
-    });
-
-
-  </script>
+</script>
 
 
 </body>
