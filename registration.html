@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Registration | DateraQuest 2.0</title>
+
+    <link rel="icon" href="img/logo-icon.png">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Registration CSS -->
+    <link
+        rel="stylesheet"
+        href="css/registration.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="registration-background">
+
+        <div class="data-grid"></div>
+
+        <div class="glow glow-one"></div>
+
+        <div class="glow glow-two"></div>
+
+        <div class="data-circle circle-one"></div>
+
+        <div class="data-circle circle-two"></div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="registration-header-top">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <img
+                src="img/logo-icon.png"
+                alt="DateraQuest"
+                class="brand-icon"
+            >
+
+            <div class="brand-text">
+
+                <strong>
+                    DateraQuest 2.0
+                </strong>
+
+                <span>
+                    National Data Science Competition
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <div class="secure-status">
+
+            <span class="status-dot"></span>
+
+            Account Verified
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="registration-page">
+
+
+        <!-- =================================================
+             PROGRESS
+        ================================================== -->
+
+        <div class="progress-wrapper">
+
+
+            <div class="progress-step completed">
+
+                <div class="step-number">
+
+                    <i class="bi bi-check-lg"></i>
+
+                </div>
+
+                <span>
+                    Account
+                </span>
+
+            </div>
+
+
+            <div class="progress-line completed"></div>
+
+
+            <div class="progress-step completed">
+
+                <div class="step-number">
+
+                    <i class="bi bi-check-lg"></i>
+
+                </div>
+
+                <span>
+                    Competition
+                </span>
+
+            </div>
+
+
+            <div class="progress-line active"></div>
+
+
+            <div class="progress-step active">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <span>
+                    Registration
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PAGE INTRO
+        ================================================== -->
+
+        <div class="page-intro">
+
+            <span class="page-kicker">
+
+                <i class="bi bi-person-vcard-fill"></i>
+
+                PARTICIPANT REGISTRATION
+
+            </span>
+
+
+            <h1>
+
+                Complete Your
+                <span>Registration</span>
+
+            </h1>
+
+
+            <p>
+
+                Lengkapi informasi peserta dan unggah
+                bukti pembayaran untuk melanjutkan
+                proses verifikasi DateraQuest 2.0.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SELECTED COMPETITION
+        ================================================== -->
+
+        <section class="selected-competition">
+
+
+            <div
+                class="selected-icon"
+                id="competitionIcon"
+            >
+
+                <i class="bi bi-bar-chart-line-fill"></i>
+
+            </div>
+
+
+            <div class="selected-info">
+
+                <span class="selected-label">
+                    SELECTED COMPETITION
+                </span>
+
+
+                <h2 id="competitionName">
+                    Loading...
+                </h2>
+
+
+                <p id="competitionDescription">
+                    Loading competition...
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="change-competition"
+                id="changeCompetition"
+            >
+
+                <i class="bi bi-arrow-left-right"></i>
+
+                <span>
+                    Change
+                </span>
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             REGISTRATION CARD
+        ================================================== -->
+
+        <section class="registration-card">
+
+
+            <!-- CARD HEADER -->
+
+            <div class="registration-card-header">
+
+                <div>
+
+                    <span class="card-kicker">
+                        REGISTRATION DETAILS
+                    </span>
+
+                    <h2>
+                        Participant Information
+                    </h2>
+
+                    <p>
+                        Masukkan data dengan benar sesuai
+                        identitas peserta.
+                    </p>
+
+                </div>
+
+
+                <div class="required-badge">
+
+                    <i class="bi bi-asterisk"></i>
+
+                    Required fields
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form
+                id="registrationForm"
+                class="registration-form"
+                enctype="multipart/form-data"
+            >
+
+
+                <div class="form-grid">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="fullName"
+                            class="form-label"
+                        >
+
+                            Full Name
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-person"></i>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="full_name"
+                                class="form-control"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- NIM -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="nim"
+                            class="form-label"
+                        >
+
+                            Student ID / NIM
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-person-badge"></i>
+
+                            <input
+                                type="text"
+                                id="nim"
+                                name="nim"
+                                class="form-control"
+                                placeholder="Enter your NIM"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- UNIVERSITY -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="university"
+                            class="form-label"
+                        >
+
+                            University
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-building"></i>
+
+                            <input
+                                type="text"
+                                id="university"
+                                name="university"
+                                class="form-control"
+                                placeholder="Enter your university"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- WHATSAPP -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="phone"
+                            class="form-label"
+                        >
+
+                            WhatsApp Number
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-whatsapp"></i>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                class="form-control"
+                                placeholder="08xxxxxxxxxx"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group full">
+
+                        <label
+                            for="email"
+                            class="form-label"
+                        >
+
+                            Email
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="example@email.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                        <small class="field-hint">
+
+                            Gunakan email aktif karena informasi
+                            verifikasi akan dikirim ke email ini.
+
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="form-group full">
+
+                        <label
+                            for="address"
+                            class="form-label"
+                        >
+
+                            Complete Address
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <div class="textarea-wrapper">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            <textarea
+                                id="address"
+                                name="address"
+                                class="form-control"
+                                placeholder="Enter your complete address"
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PAYMENT -->
+
+                    <div class="form-group full">
+
+                        <label
+                            for="paymentProof"
+                            class="form-label"
+                        >
+
+                            Payment Proof
+
+                            <span>*</span>
+
+                        </label>
+
+
+                        <div
+                            class="upload-box"
+                            id="uploadBox"
+                        >
+
+
+                            <div class="upload-icon">
+
+                                <i class="bi bi-cloud-arrow-up"></i>
+
+                            </div>
+
+
+                            <strong>
+                                Upload Payment Proof
+                            </strong>
+
+
+                            <span class="upload-description">
+
+                                Drag & drop atau pilih file
+                                bukti pembayaran
+
+                            </span>
+
+
+                            <small>
+
+                                JPG, JPEG atau PNG
+                                · Maximum 5 MB
+
+                            </small>
+
+
+                            <label
+                                for="paymentProof"
+                                class="choose-file-btn"
+                            >
+
+                                <i class="bi bi-folder2-open"></i>
+
+                                Choose File
+
+                            </label>
+
+
+                            <input
+                                type="file"
+                                id="paymentProof"
+                                name="payment_proof"
+                                accept=".jpg,.jpeg,.png"
+                                required
+                            >
+
+
+                            <div
+                                class="file-selected"
+                                id="fileSelected"
+                            >
+
+                                <i class="bi bi-file-earmark-image"></i>
+
+                                <span id="fileName">
+                                    No file selected
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     VERIFICATION INFO
+                ================================================== -->
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+
+                        <i class="bi bi-shield-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Verification Process
+                        </strong>
+
+                        <p>
+
+                            Data registrasi dan bukti pembayaran
+                            akan diperiksa oleh panitia.
+                            Setelah proses verifikasi selesai,
+                            peserta akan menerima konfirmasi
+                            melalui email.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FORM FOOTER
+                ================================================== -->
+
+                <div class="form-footer">
+
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelBtn"
+                    >
+
+                        <i class="bi bi-arrow-left"></i>
+
+                        Back
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                        id="submitBtn"
+                        disabled
+                    >
+
+                        <span>
+                            Submit Registration
+                        </span>
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </button>
+
+
+                </div>
+
+
+                <div
+                    class="form-status"
+                    id="formStatus"
+                >
+
+                    <i class="bi bi-info-circle"></i>
+
+                    Complete all required fields to continue.
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- FOOTNOTE -->
+
+        <p class="registration-footnote">
+
+            <i class="bi bi-lock-fill"></i>
+
+            Your registration information is securely protected.
+
+        </p>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="registration-footer">
+
+        <span>
+            © 2026 DateraQuest 2.0
+        </span>
+
+        <span class="footer-dot"></span>
+
+        <span>
+            National Data Science Competition
+        </span>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =================================================
+                   COMPETITION DATA
+                ================================================= */
+
+                const competitions = {
+
+                    "iterative-dashboard": {
+
+                        name:
+                            "Iterative Dashboard",
+
+                        description:
+                            "DateraQuest 2.0 · Data Visualization Competition",
+
+                        icon:
+                            "bi-bar-chart-line-fill"
+
+                    },
+
+
+                    "machine-learning": {
+
+                        name:
+                            "Machine Learning",
+
+                        description:
+                            "DateraQuest 2.0 · Machine Learning Competition",
+
+                        icon:
+                            "bi-cpu-fill"
+
+                    },
+
+
+                    "essay-quest": {
+
+                        name:
+                            "Essay Quest",
+
+                        description:
+                            "DateraQuest 2.0 · Data-Driven Essay Competition",
+
+                        icon:
+                            "bi-file-earmark-text-fill"
+
+                    }
+
+                };
+
+
+                /* =================================================
+                   GET ELEMENTS
+                ================================================= */
+
+                const competitionName =
+                    document.getElementById(
+                        "competitionName"
+                    );
+
+                const competitionDescription =
+                    document.getElementById(
+                        "competitionDescription"
+                    );
+
+                const competitionIcon =
+                    document.querySelector(
+                        "#competitionIcon i"
+                    );
+
+                const changeCompetition =
+                    document.getElementById(
+                        "changeCompetition"
+                    );
+
+                const cancelBtn =
+                    document.getElementById(
+                        "cancelBtn"
+                    );
+
+                const registrationForm =
+                    document.getElementById(
+                        "registrationForm"
+                    );
+
+                const submitBtn =
+                    document.getElementById(
+                        "submitBtn"
+                    );
+
+                const formStatus =
+                    document.getElementById(
+                        "formStatus"
+                    );
+
+                const paymentProof =
+                    document.getElementById(
+                        "paymentProof"
+                    );
+
+                const uploadBox =
+                    document.getElementById(
+                        "uploadBox"
+                    );
+
+                const fileSelected =
+                    document.getElementById(
+                        "fileSelected"
+                    );
+
+                const fileName =
+                    document.getElementById(
+                        "fileName"
+                    );
+
+
+                /* =================================================
+                   GET SELECTED COMPETITION
+                   
+                   PRIORITY:
+                   1. URL ?competition=
+                   2. localStorage
+                ================================================= */
+
+                const urlParams =
+                    new URLSearchParams(
+                        window.location.search
+                    );
+
+
+                let selectedCompetition =
+                    urlParams.get("competition");
+
+
+                if (
+                    !selectedCompetition
+                ) {
+
+                    selectedCompetition =
+                        localStorage.getItem(
+                            "selectedCompetitionCode"
+                        );
+
+                }
+
+
+                /*
+                 * Fallback:
+                 * Kalau localStorage hanya menyimpan
+                 * nama kompetisi.
+                 */
+
+                if (
+                    !selectedCompetition
+                ) {
+
+                    const storedName =
+                        localStorage.getItem(
+                            "selectedCompetition"
+                        );
+
+
+                    if (
+                        storedName ===
+                        "Iterative Dashboard"
+                    ) {
+
+                        selectedCompetition =
+                            "iterative-dashboard";
+
+                    }
+
+
+                    if (
+                        storedName ===
+                        "Machine Learning"
+                    ) {
+
+                        selectedCompetition =
+                            "machine-learning";
+
+                    }
+
+
+                    if (
+                        storedName ===
+                        "Essay Quest"
+                    ) {
+
+                        selectedCompetition =
+                            "essay-quest";
+
+                    }
+
+                }
+
+
+                /* =================================================
+                   VALIDATE COMPETITION
+                ================================================= */
+
+                if (
+                    !selectedCompetition ||
+                    !competitions[
+                        selectedCompetition
+                    ]
+                ) {
+
+                    window.location.href =
+                        "select-competition.html";
+
+                    return;
+
+                }
+
+
+                /* =================================================
+                   DISPLAY SELECTED COMPETITION
+                ================================================= */
+
+                const competition =
+                    competitions[
+                        selectedCompetition
+                    ];
+
+
+                competitionName.textContent =
+                    competition.name;
+
+
+                competitionDescription.textContent =
+                    competition.description;
+
+
+                competitionIcon.className =
+                    "bi " + competition.icon;
+
+
+                /*
+                 * Simpan lagi agar pilihan tidak hilang.
+                 */
+
+                localStorage.setItem(
+                    "selectedCompetition",
+                    competition.name
+                );
+
+
+                localStorage.setItem(
+                    "selectedCompetitionCode",
+                    selectedCompetition
+                );
+
+
+
+                /* =================================================
+                   CHANGE COMPETITION
+                ================================================= */
+
+                changeCompetition.addEventListener(
+                    "click",
+                    function () {
+
+                        window.location.href =
+                            "select-competition.html";
+
+                    }
+                );
+
+
+                cancelBtn.addEventListener(
+                    "click",
+                    function () {
+
+                        window.location.href =
+                            "select-competition.html";
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   REQUIRED INPUTS
+                ================================================= */
+
+                const requiredInputs =
+                    registrationForm.querySelectorAll(
+                        "input[required], textarea[required]"
+                    );
+
+
+
+                /* =================================================
+                   CHECK FORM
+                ================================================= */
+
+                function checkForm() {
+
+                    let complete = true;
+
+
+                    requiredInputs.forEach(
+                        function (input) {
+
+                            if (
+                                input.type === "file"
+                            ) {
+
+                                if (
+                                    input.files.length === 0
+                                ) {
+
+                                    complete = false;
+
+                                }
+
+                            } else {
+
+                                if (
+                                    input.value.trim() === ""
+                                ) {
+
+                                    complete = false;
+
+                                }
+
+                            }
+
+                        }
+                    );
+
+
+                    /*
+                     * HTML validation
+                     */
+
+                    if (
+                        !registrationForm.checkValidity()
+                    ) {
+
+                        complete = false;
+
+                    }
+
+
+                    submitBtn.disabled =
+                        !complete;
+
+
+                    if (complete) {
+
+                        submitBtn.classList.add(
+                            "ready"
+                        );
+
+                        formStatus.classList.add(
+                            "complete"
+                        );
+
+                        formStatus.innerHTML =
+                            '<i class="bi bi-check-circle-fill"></i>' +
+                            ' All information is complete. ' +
+                            'You can submit your registration.';
+
+                    } else {
+
+                        submitBtn.classList.remove(
+                            "ready"
+                        );
+
+                        formStatus.classList.remove(
+                            "complete"
+                        );
+
+                        formStatus.innerHTML =
+                            '<i class="bi bi-info-circle"></i>' +
+                            ' Complete all required fields to continue.';
+
+                    }
+
+                }
+
+
+
+                /* =================================================
+                   INPUT LISTENER
+                ================================================= */
+
+                requiredInputs.forEach(
+                    function (input) {
+
+                        input.addEventListener(
+                            "input",
+                            checkForm
+                        );
+
+
+                        input.addEventListener(
+                            "change",
+                            checkForm
+                        );
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   PAYMENT FILE
+                ================================================= */
+
+                paymentProof.addEventListener(
+                    "change",
+                    function () {
+
+                        if (
+                            paymentProof.files.length === 0
+                        ) {
+
+                            fileSelected.classList.remove(
+                                "show"
+                            );
+
+                            uploadBox.classList.remove(
+                                "uploaded"
+                            );
+
+                            fileName.textContent =
+                                "No file selected";
+
+                            checkForm();
+
+                            return;
+
+                        }
+
+
+                        const file =
+                            paymentProof.files[0];
+
+
+                        const maxSize =
+                            5 * 1024 * 1024;
+
+
+                        const allowedTypes = [
+                            "image/jpeg",
+                            "image/jpg",
+                            "image/png"
+                        ];
+
+
+                        /*
+                         * Validate type
+                         */
+
+                        if (
+                            !allowedTypes.includes(
+                                file.type
+                            )
+                        ) {
+
+                            alert(
+                                "Format file harus JPG, JPEG atau PNG."
+                            );
+
+                            paymentProof.value = "";
+
+                            checkForm();
+
+                            return;
+
+                        }
+
+
+                        /*
+                         * Validate size
+                         */
+
+                        if (
+                            file.size > maxSize
+                        ) {
+
+                            alert(
+                                "Ukuran file maksimal 5 MB."
+                            );
+
+                            paymentProof.value = "";
+
+                            checkForm();
+
+                            return;
+
+                        }
+
+
+                        /*
+                         * Show selected file
+                         */
+
+                        fileName.textContent =
+                            file.name;
+
+
+                        fileSelected.classList.add(
+                            "show"
+                        );
+
+
+                        uploadBox.classList.add(
+                            "uploaded"
+                        );
+
+
+                        checkForm();
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   SUBMIT
+                ================================================= */
+
+                registrationForm.addEventListener(
+                    "submit",
+                    function (event) {
+
+                        event.preventDefault();
+
+
+                        /*
+                         * Safety validation
+                         */
+
+                        if (
+                            !registrationForm.checkValidity()
+                        ) {
+
+                            registrationForm.reportValidity();
+
+                            checkForm();
+
+                            return;
+
+                        }
+
+
+                        if (
+                            !paymentProof.files.length
+                        ) {
+
+                            alert(
+                                "Silakan upload bukti pembayaran terlebih dahulu."
+                            );
+
+                            return;
+
+                        }
+
+
+                        /*
+                         * Disable button sementara
+                         */
+
+                        submitBtn.disabled = true;
+
+                        submitBtn.classList.remove(
+                            "ready"
+                        );
+
+
+                        submitBtn.innerHTML =
+                            '<span>Submitting...</span>' +
+                            '<i class="bi bi-arrow-repeat spin"></i>';
+
+
+                        /*
+                         * Simpan status sementara.
+                         * Nanti bisa diganti dengan PHP/MySQL.
+                         */
+
+                        localStorage.setItem(
+                            "registrationSubmitted",
+                            "true"
+                        );
+
+
+                        localStorage.setItem(
+                            "registrationCompetition",
+                            competition.name
+                        );
+
+
+                        /*
+                         * Redirect success
+                         */
+
+                        setTimeout(
+                            function () {
+
+                                window.location.href =
+                                    "registration-success.html";
+
+                            },
+                            700
+                        );
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   INITIAL CHECK
+                ================================================= */
+
+                checkForm();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
